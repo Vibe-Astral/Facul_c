@@ -1,5 +1,5 @@
 [Project]
-FileName=mapaalp2.dev
+FileName=Project1.dev
 Name=Project1
 Type=1
 Ver=2
@@ -28,7 +28,7 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0000000000000000001000000
+CompilerSettings=0000000000001000001000000
 UnitCount=1
 
 [VersionInfo]
