@@ -14,34 +14,28 @@
 		int lote;
 	};
 		
-		
-		
-		
-	int main(int argc, char** argv) {
-		int i,cont,arm,menu,resp,esc;
-		char busca[15];
-		struct	cadastro cad[999];
-		setlocale(LC_ALL, "Portuguese");
+	struct	cadastro cad[999];
+	int i,cont,arm,menu,resp,esc;
+	char busca[15];	
 	
-		
-      	
-	do{	
-		system("cls");
-		printf("--------------------------------\n");
-		printf("Selecione uma opção:\n 1 - Cadastrar\n 2 - Listar\n 3 - Consultar\n 4 - Sair\n");
-		printf("--------------------------------\n");
-		scanf("%d", &menu);
-		fflush(stdin);
-		system("cls");
-		
-		switch (menu){
-			
-			case 1 :
-				system("cls");
+	void cadastrar();
+	void listar();
+	void pesquisar();
+	void codigo();
+	
+	void codigo(){
+			printf("Seu codigo é %d\n",i);
+
+		return;
+	}
+	
+	void cadastrar(){
+				struct	cadastro cad[999];
 				
-				while (resp == 1){
+				do{
 					printf("=========================\n");
-					printf("Seu codigo é %d\n", cad[i].codigo);
+					
+					codigo();
 					
 					printf("Digite o nome\n");
 					scanf("%s", &cad[i].nome);
@@ -69,11 +63,14 @@
 					printf("deseja cadastrar Mais?\n 1 - 2im || 2 - não \n");
 					scanf("%d",&resp);
 					fflush(stdin);
-				}
-					break;
-			case 2 :
-				system("cls"); 
-				if(cont)
+					
+	}while (resp == 1);
+	return;
+}
+	void listar (){
+			struct	cadastro cad[999];
+
+				if(cont);
 				printf("Cadastros disponiveis: %d\n", cont);
 				
 				for(i=0 ; i<cont ;i++){
@@ -91,13 +88,16 @@
 					printf("Lote: %d\n",cad[i].lote);
 					
 					printf("=========================\n");
-				}
-				system("pause");
-				break;	
-				
-			case 3 :
-				if(cont >1000){
-					printf("sem Cpfs cadastrados");
+					
+					
+	}
+	return ;
+}
+	void pesquisar(){
+				struct	cadastro cad[999];
+
+				if(cont ==  0){
+					printf("sem Cpfs cadastrados\n");
 				}else{
 					printf("CPFS disponiveis pra consulta, %d\n",cont);
 				printf("Digite o CPF que deseja buscar\n");
@@ -130,7 +130,36 @@
 				}
 				
 				system("pause");
+				return; 
+	}
+	
+		
+		
+	int main(int argc, char** argv) {
+	setlocale(LC_ALL, "Portuguese");
+
+	
+      	
+	do{	
+		printf("--------------------------------\n");
+		printf("Selecione uma opção:\n 1 - Cadastrar\n 2 - Listar\n 3 - Consultar\n 4 - Sair\n");
+		printf("--------------------------------\n");
+		scanf("%d", &menu);
+		fflush(stdin);
+		system("cls");
+		
+		switch (menu){
+			
+			case 1 :
+				 cadastrar();
+				break;
 				
+			case 2 :
+				listar();	
+				break;
+					
+			case 3 :	
+				pesquisar();	
 				break;	
 				
 			case 4 :
@@ -146,5 +175,5 @@
 			}
       		
 	 }while (menu != 4);
-    return 0;
+	 
 }
